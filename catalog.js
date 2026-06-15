@@ -78,9 +78,9 @@ function renderCatalog() {
                 if (nameLower.includes("презентация") || nameLower.includes("ppt")) {
                     iconName = "presentation.png";
                 } else if (nameLower.includes("excel") || nameLower.includes("xlsx") || nameLower.includes("таблица") || (nameLower.includes("задача") && nameLower.includes("ексел"))) {
-                    iconName = "excel.png";
+                    iconName = "xls.png";
                 } else if (nameLower.includes("задача") || nameLower.includes("word") || nameLower.includes("docx")) {
-                    iconName = "word.png"; 
+                    iconName = "docx.png"; 
                 } else if (nameLower.includes("pdf")) {
                     iconName = "pdf.png";
                 }
@@ -88,7 +88,7 @@ function renderCatalog() {
                 buttonsHTML += `
                     <a href="${res.url}" target="_blank" class="btn-resource-single">
                         <div class="btn-resource-text-side" style="display: flex; align-items: center; gap: 8px;">
-                            <img src="resources/${iconName}" style="width: 16px; height: 16px; object-fit: contain; flex-shrink: 0;" alt="">
+                            <img src="icons/${iconName}" style="width: 16px; height: 16px; object-fit: contain; flex-shrink: 0;" alt="">
                             <span>${res.name}</span>
                         </div>
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>

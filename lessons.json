@@ -3,8 +3,8 @@
         "title": "Преговор",
         "subject": "КМИТ",
         "grade": "5",
-        "image": "/backgrounds/cloud-computing-banner-background-smart-city.jpg",
-        "desc": "",
+        "image": "https://media.istockphoto.com/id/2140836981/photo/teenage-girls-using-typing-on-laptops.webp?b=1&s=612x612&w=0&k=20&c=ECnyZkbcQTZfJ-vFlmvOHfViPFceqo386QaAid_UQ9o=",
+        "desc": "Преговор на основните понятия и теми от 4 клас, които са важни за разбирането на материала в 5 клас.",
         "type": "Презентация",
         "duration": "40 мин",
         "resources": [
@@ -15,7 +15,7 @@
         "title": "Компютърна система и информационни технологии",
         "subject": "КМИТ",
         "grade": "5",
-        "image": "/backgrounds/cloud-computing-banner-background-smart-city.jpg",
+        "image": "https://media.istockphoto.com/id/1342186559/photo/a-business-man-using-a-computer-to-manage-documents-online-document-communication-database.webp?b=1&s=612x612&w=0&k=20&c=9aVBmNQz7czrvjw3krFIaMzEpQ9NaJxie8uEOUAzwcQ=",
         "desc": "",
         "type": "Презентация",
         "duration": "40 мин",
@@ -39,7 +39,7 @@
         "title": "Файлова структура на организация на данните",
         "subject": "КМИТ",
         "grade": "5",
-        "image": "/backgrounds/file-folder.jpg",
+        "image": "https://media.istockphoto.com/id/1402436756/photo/uploading-documents-from-folder-open-file-folder-with-flying-blank-documents-with-laptop.webp?b=1&s=612x612&w=0&k=20&c=Fr5IKpShO4TKCgDOxFOYiqrywCsQT1d5QeQrQN0jaWo=",
         "desc": "",
         "type": "Презентация",
         "duration": "40 мин",
@@ -51,7 +51,7 @@
         "title": "Основни действия с файлове и папкиова структура на организация на данните",
         "subject": "КМИT",
         "grade": "5",
-        "image": "/backgrounds/cloud-computing-banner-background-smart-city.jpg",
+        "image": "https://media.istockphoto.com/id/1402436756/photo/uploading-documents-from-folder-open-file-folder-with-flying-blank-documents-with-laptop.webp?b=1&s=612x612&w=0&k=20&c=Fr5IKpShO4TKCgDOxFOYiqrywCsQT1d5QeQrQN0jaWo=",
         "desc": "",
         "type": "Презентация",
         "duration": "40 мин",
@@ -63,7 +63,7 @@
         "title": "Интернет",
         "subject": "КМИТ",
         "grade": "5",
-        "image": "macloud-computing-banner-background-smart-city.jpg",
+        "image": "https://cdn.pixabay.com/photo/2023/03/13/15/21/iot-7850194_640.jpg",
         "desc": "",
         "type": "Презентация",
         "duration": "40 мин",
@@ -75,7 +75,7 @@
         "title": "Електронна поща",
         "subject": "КМИТ",
         "grade": "5",
-        "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&auto=format&fit=crop&q=60",
+        "image": "https://cdn.pixabay.com/photo/2018/03/22/02/37/email-3249062_1280.png",
         "desc": "",
         "type": "Презентация",
         "duration": "40 мин",
@@ -84,22 +84,10 @@
         ]
     },
     {
-        "title": "Числата и техните представяния",
-        "subject": "Информатика",
-        "grade": "8",
-        "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&auto=format&fit=crop&q=60",
-        "desc": "",
-        "type": "Презентация и задачи",
-        "duration": "40 мин",
-        "resources": [
-            { "name": "Разгледай презентацията", "url": "materials/8 grade/8 кл - Тема 1- Числата и техните представяния.pdf" }
-        ]
-    },
-    {
         "title": "Изпращане и получаване на електронно писмо. Прикачени файлове",
         "subject": "КМИТ",
         "grade": "5",
-        "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&auto=format&fit=crop&q=60",
+        "image": "https://cdn.pixabay.com/photo/2018/03/22/02/37/email-3249062_1280.png",
         "desc": "",
         "type": "Презентация",
         "duration": "40 мин",
@@ -130,17 +118,6 @@
         "resources": [
             { "name": "Разгледай презентацията", "url": "materials/8 grade/8 кл. Тема 2 - Информационни дейности и процеси.pdf" }
         ]
-    },
-    {
-        "title": "Анализ на данни и автоматизиране на изчисления в Excel",
-        "subject": "КМИТ",
-        "grade": "8",
-        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600",
-        "desc": "Работа с формули, използване на относителни и абсолютни адреси, сортиране и филтриране на таблици.",
-        "type": "Практическа задача",
-        "duration": "45 мин",
-        "resources": [
-            { "name": "Свали практическа задача (docx)", "url": "#" }
-        ]
     }
+    
 ]
