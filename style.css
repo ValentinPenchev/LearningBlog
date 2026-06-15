@@ -1,0 +1,1204 @@
+:root {
+    --bg-base: #f8fafc;
+    --bg-card: #ffffff;
+    --accent-blue: #2563eb;
+    --accent-blue-light: #eff6ff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border-color: rgba(0, 0, 0, 0.04);
+    
+    /* Идентични заобления като на дизайна */
+    --radius-card: 24px;
+    --radius-pill: 30px;
+    --radius-btn: 10px;
+    
+    /* Изтънчени наслоени сенки */
+    --shadow-premium: 0 4px 24px rgba(0, 0, 0, 0.015), 
+                      0 10px 40px rgba(0, 0, 0, 0.025);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-base);
+    color: var(--text-main);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    
+    /* Фини, меки дигитални преливания в ъглите точно като на примерите */
+    background-image: 
+        radial-gradient(circle at 5% 10%, rgba(37, 99, 235, 0.04) 0%, transparent 35%),
+        radial-gradient(circle at 95% 15%, rgba(147, 51, 234, 0.03) 0%, transparent 35%),
+        radial-gradient(circle at 50% 60%, rgba(37, 99, 235, 0.01) 0%, transparent 50%);
+    background-attachment: fixed;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ==========================================================================
+   НОВ PREMIUM HEADER (APPLE / SAAS BLUR STYLE)
+   ========================================================================== */
+/* ==========================================================================
+   THE ULTIMATE FLOATING GLASS DOCK (PREMIUM SAAS STYLE)
+   ========================================================================== */
+.main-nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 760px; /* Компактен, за да изглежда като истински dock */
+    z-index: 1000;
+    
+    /* Истински Apple Glassmorphism */
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(24px) saturate(190%);
+    -webkit-backdrop-filter: blur(24px) saturate(190%);
+    
+    /* Двойна рамка за изтънчен стъклен ръб */
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 24px;
+    
+    /* Луксозни наслоени сенки + вътрешна за обем */
+    box-shadow: 
+        0 1px 2px rgba(0, 0, 0, 0.02),
+        0 8px 32px rgba(0, 0, 0, 0.04),
+        0 20px 60px rgba(0, 0, 0, 0.03),
+        inset 0 1px 1px rgba(255, 255, 255, 0.8);
+        
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Когато потребителят скролира, хедърът става малко по-солиден */
+body:has(> *:not(.main-nav):target) .main-nav {
+    background: rgba(255, 255, 255, 0.7);
+    top: 14px;
+}
+
+.nav-container {
+    padding: 8px 12px 8px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Лого зона */
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #0f172a;
+    font-weight: 700;
+    font-size: 14.5px;
+    letter-spacing: -0.03em;
+}
+
+.logo-icon {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    color: #ffffff;
+    width: 32px;
+    height: 32px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+/* Навигационни линкове като Segmented Control */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(0, 0, 0, 0.03);
+    padding: 4px;
+    border-radius: 18px;
+    border: 1px solid rgba(0, 0, 0, 0.01);
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #64748b;
+    font-size: 13.5px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    padding: 8px 20px;
+    border-radius: 14px;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+}
+
+/* Свеж hover ефект - повдигане и побеляване */
+.nav-links a:hover {
+    color: #0f172a;
+    background: rgba(255, 255, 255, 0.7);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+/* Активната страница изпъква брутално в собствен стъклен слой */
+.nav-links a.active {
+    color: #2563eb;
+    background: #ffffff;
+    font-weight: 700;
+    box-shadow: 
+        0 1px 2px rgba(0, 0, 0, 0.01),
+        0 6px 16px rgba(37, 99, 235, 0.06);
+}
+
+/* Дискретен премиум детайл: малка синя точка под активния линк */
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    background-color: #2563eb;
+    border-radius: 50%;
+}
+
+/* Бута малко съдържанието надолу, за да не се застъпва от фиксирания dock */
+body {
+    padding-top: 100px;
+}
+
+/* Адаптивност за телефон */
+@media (max-width: 600px) {
+    .main-nav {
+        top: 12px;
+        width: calc(100% - 24px);
+        border-radius: 20px;
+    }
+    
+    .nav-container {
+        padding: 6px 8px;
+    }
+    
+    .logo-area span {
+        display: none; /* Скрива текста "Образователен Профил", остава само иконата, за да има място */
+    }
+    
+    .nav-links {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .nav-links a {
+        padding: 8px 0;
+        flex: 1;
+        text-align: center;
+        font-size: 13px;
+    }
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 4px; /* Минималистично отстояние между бутоните */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 10px;
+    transition: all 0.15s ease;
+}
+
+/* Ефект при посочване */
+.nav-links a:hover {
+    color: var(--text-main);
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+/* Стил за активната страница */
+.nav-links a.active {
+    color: var(--accent-blue);
+    background-color: var(--accent-blue-light);
+    font-weight: 600;
+}
+
+/* Пълна адаптивност за мобилни екрани */
+@media (max-width: 600px) {
+    .nav-container {
+        padding: 10px 16px;
+    }
+    
+    .logo-area span {
+        font-size: 15px; /* Малко по-компактно лого на телефон */
+    }
+    
+    .nav-links a {
+        padding: 6px 12px; /* По-малки бутони, за да се събират идеално на един ред */
+        font-size: 13px;
+    }
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--accent-blue);
+}
+
+.nav-right-actions {
+    display: flex;
+    align-items: center;
+}
+
+
+
+/* Hero Секция */
+.hero-section {
+    padding: 40px 0 50px 0;
+}
+
+.hero-wrapper {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 64px;
+}
+
+.hero-badge {
+    background-color: #e0f2fe;
+    color: var(--accent-blue);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: var(--radius-pill);
+    display: inline-block;
+    margin-bottom: 24px;
+}
+
+.hero-content h1 {
+    font-size: 46px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    line-height: 1.15;
+    margin-bottom: 24px;
+}
+
+.hero-content p {
+    color: var(--text-muted);
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 36px;
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--accent-blue);
+    color: white;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: var(--radius-btn);
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.15);
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.25);
+}
+
+.hero-image-wrapper {
+    position: relative;
+}
+
+.hero-main-img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-premium);
+}
+
+.floating-stats-card {
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    background: rgba(255, 255, 255, 0.9);
+   /*  backdrop-filter: blur(10px); */
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 16px 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.stats-icon-box {
+    background-color: var(--accent-blue-light);
+    color: var(--accent-blue);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stats-text strong { display: block; font-size: 14px; font-weight: 600; }
+.stats-text span { font-size: 12px; color: var(--text-muted); }
+
+/* Контентна подредба */
+.main-content-section {
+    padding: 20px 0;
+}
+
+.section-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.view-all-link {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.content-layout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 340px;
+    gap: 32px;
+}
+
+/* Страница с пълен каталог (Скриване на страничната лента при нужда) */
+.full-width-catalog {
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+}
+
+/* Новият дизайн на плочките (Картите) с вградени бутони */
+.premium-card {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-card);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-premium);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.premium-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.04);
+}
+
+.card-media-box {
+    height: 170px;
+    background-color: #f1f5f9;
+    position: relative;
+}
+
+.card-media-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bookmark-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-muted);
+}
+
+.card-info-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-badge-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.mini-badge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 8px;
+}
+
+.badge-gray { background-color: #f1f5f9; color: var(--text-main); }
+.badge-blue { background-color: var(--accent-blue-light); color: var(--accent-blue); }
+
+.premium-card h3 {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 6px;
+}
+
+.card-desc {
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+/* Секция с двата бутона вътре в плочката */
+.card-action-row {
+    display: flex;
+    gap: 10px;
+    margin-top: auto; /* Натиска бутоните винаги на дъното */
+    margin-bottom: 20px;
+}
+
+.btn-card-view {
+    flex: 1;
+    text-align: center;
+    background-color: #475569; /* Стил от демото */
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 0;
+    border-radius: var(--radius-btn);
+    transition: background 0.2s;
+}
+
+.btn-card-view:hover { background-color: #334155; }
+
+.btn-card-download {
+    flex: 1;
+    text-align: center;
+    background-color: transparent;
+    color: #475569;
+    border: 1px solid #cbd5e1;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 9px 0;
+    border-radius: var(--radius-btn);
+    transition: all 0.2s;
+}
+
+.btn-card-download:hover {
+    background-color: #f8fafc;
+    border-color: #94a3b8;
+}
+
+.card-footer-meta {
+    border-top: 1px solid var(--border-color);
+    padding-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.author-box { display: flex; align-items: center; gap: 6px; }
+.author-avatar { width: 18px; height: 18px; border-radius: 50%; background-color: #cbd5e1; }
+
+/* Страничен блок Категории */
+.categories-sidebar-block {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-card);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-premium);
+    padding: 24px;
+    height: fit-content;
+}
+
+.sidebar-title { font-size: 16px; font-weight: 700; margin-bottom: 20px; }
+
+.category-item-link {
+    display: flex; align-items: center; justify-content: space-between;
+    text-decoration: none; color: var(--text-main);
+    padding: 12px 0; border-bottom: 1px solid rgba(0,0,0,0.01);
+    font-size: 14px; font-weight: 500; transition: color 0.2s;
+}
+
+.category-item-link:last-child { border-bottom: none; }
+.category-left-side { display: flex; align-items: center; gap: 12px; }
+.cat-icon-holder { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+.cat-blue { background-color: #eff6ff; color: #2563eb; }
+.cat-green { background-color: #f0fdf4; color: #16a34a; }
+.cat-orange { background-color: #fff7ed; color: #ea580c; }
+.cat-purple { background-color: #faf5ff; color: #9333ea; }
+.category-right-side { display: flex; align-items: center; gap: 8px; color: var(--text-muted); font-size: 13px; }
+.category-item-link:hover { color: var(--accent-blue); }
+
+/* Филтри за страницата с уроци */
+.filters-container-box {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-card);
+    padding: 24px;
+    margin-bottom: 40px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-premium);
+}
+
+.filter-group-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.filter-group-wrapper:last-child { margin-bottom: 0; }
+.filter-title-label { font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.filter-pills-row { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.filter-pill-btn {
+    background-color: #f1f5f9;
+    border: none;
+    color: var(--text-main);
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: var(--radius-btn);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filter-pill-btn:hover { background-color: #e2e8f0; }
+.filter-pill-btn.active { background-color: var(--text-main); color: #ffffff; }
+
+/* Долен бар екстри */
+.bottom-features-bar {
+    border-top: 1px solid var(--border-color);
+    background-color: rgba(255, 255, 255, 0.6);
+    /* backdrop-filter: blur(10px); */
+    padding: 32px 0;
+    margin-top: 60px;
+}
+
+.features-flex-container { display: flex; justify-content: space-around; gap: 24px; }
+.feature-pill-item { display: flex; align-items: center; gap: 12px; }
+.f-icon-circle { width: 44px; height: 44px; border-radius: 50%; background-color: #ffffff; color: var(--accent-blue); display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
+.f-info-text strong { display: block; font-size: 14px; font-weight: 600; }
+.f-info-text span { font-size: 12px; color: var(--text-muted); }
+
+/* За мен страница стилове */
+.about-layout-grid { display: grid; grid-template-columns: 300px 1fr; gap: 40px; margin-top: 40px; }
+.profile-card-sidebar { background-color: var(--bg-card); border-radius: var(--radius-card); padding: 32px; text-align: center; border: 1px solid var(--border-color); box-shadow: var(--shadow-premium); height: fit-content; }
+.avatar-img-circle { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; }
+.profile-card-sidebar h2 { font-size: 20px; font-weight: 700; }
+.profile-card-sidebar p { color: var(--text-muted); font-size: 14px; margin-bottom: 20px; }
+.profile-meta-details { text-align: left; border-top: 1px solid var(--border-color); padding-top: 20px; display: flex; flex-direction: column; gap: 14px; }
+.meta-block { display: flex; flex-direction: column; font-size: 13px; }
+.meta-block-label { font-size: 10px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 2px; }
+.about-main-text-area { display: flex; flex-direction: column; gap: 24px; }
+.about-text-card { background-color: var(--bg-card); border-radius: var(--radius-card); padding: 32px; border: 1px solid var(--border-color); box-shadow: var(--shadow-premium); }
+.about-text-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 16px; }
+.about-text-card p { font-size: 15px; color: #334155; line-height: 1.6; }
+
+@media (max-width: 1024px) {
+    .content-layout-grid { grid-template-columns: 1fr 1fr; }
+    .categories-sidebar-block { grid-column: span 2; }
+}
+@media (max-width: 768px) {
+    .hero-wrapper, .about-layout-grid { grid-template-columns: 1fr; gap: 40px; }
+    .content-layout-grid { grid-template-columns: 1fr; }
+    .categories-sidebar-block { grid-column: span 1; }
+    .features-flex-container { flex-direction: column; }
+}
+/* Контейнер за падащото меню */
+.download-dropdown-container {
+    position: relative;
+    flex: 1;
+}
+
+/* Модификация на бутона, за да заприлича на меню */
+.btn-card-download.toggle-dropdown-btn {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+/* Стилове за самото падащо меню (SaaS премиум изглед) */
+.card-dropdown-menu {
+    position: absolute;
+    bottom: 125%; /* Появява се плавно над бутона */
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    padding: 6px;
+    display: none; /* Скрито по подразбиране */
+    flex-direction: column;
+    gap: 2px;
+    z-index: 10;
+    animation: slideUp 0.2s ease;
+}
+
+/* Класът, който ще се добавя с JavaScript при клик */
+.card-dropdown-menu.active {
+    display: flex;
+}
+
+/* Списъкът с линкове вътре в менюто */
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: background-color 0.15s ease;
+}
+
+/* Ефект при посочване на конкретен ресурс */
+.dropdown-item:hover {
+    background-color: var(--accent-blue-light);
+    color: var(--accent-blue);
+}
+
+/* Анимация за изскачане на менюто */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Контейнер за бутоните в плочката */
+.card-resources-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 14px;
+    margin-bottom: 18px;
+}
+
+/* Стил за всеки самостоятелен бутон */
+.btn-resource-single {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f8fafc;
+    color: #334155;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+}
+
+/* Ховър ефект при посочване */
+.btn-resource-single:hover {
+    background-color: #f0f5ff; /* Леко синьо */
+    color: #2563eb; /* Основно синьо */
+    border-color: rgba(37, 99, 235, 0.2);
+    transform: translateX(3px); /* Леко мръдване за SaaS усещане */
+}
+
+.btn-resource-text-side {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+/* ==========================================================================
+   ГЛОБАЛНИ КОРЕКЦИИ ЗА НАВИГАЦИЯ И ЧЕТИМОСТ НА ПЛОЧКИТЕ
+   ========================================================================== */
+
+/* Подравняване на менюто вдясно */
+.main-nav .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-nav .nav-links {
+    display: flex;
+    gap: 28px;
+    margin-left: auto; /* Избутва линковете в крайно дясно положение */
+}
+
+.main-nav .nav-links a {
+    font-size: 16px; /* По-голям и четим шрифт на менюто */
+    font-weight: 500;
+    text-decoration: none;
+}
+
+/* По-голям и четим текст в плочките (картите с уроци) */
+.premium-card h3, .lesson-card h3 {
+    font-size: 20px; /* Увеличено заглавие */
+    line-height: 1.4;
+    margin-bottom: 10px;
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.premium-card .card-desc, .lesson-card .card-desc, .lesson-card p {
+    font-size: 15px; /* Оптимален размер за продължително четене */
+    line-height: 1.6; /* По-голямо въздушно пространство между редовете */
+    color: #475569; /* По-тъмен, силно контрастен цвят (намалява умората на очите) */
+}
+
+/* Текст на бутоните за ресурси в плочките */
+.btn-resource-single span, .resource-link span {
+    font-size: 14.5px;
+    font-weight: 500;
+}
+/* ==========================================================================
+   СТИЛОВЕ ЗА СТРАНИЦА "ЗА МЕН" (PREMIUM MODULAR LAYOUT)
+   ========================================================================== */
+
+/* Основна контентна зона */
+.about-grid-container {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 40px;
+    margin-top: 40px;
+    margin-bottom: 80px;
+}
+
+/* Профилна карта (Вляво) */
+.profile-sticky-card {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-card);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-premium);
+    padding: 36px 28px;
+    text-align: center;
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+
+.profile-avatar-wrapper {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 24px auto;
+}
+
+.profile-avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #e0f2fe 0%, #eff6ff 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-blue);
+    border: 4px solid #ffffff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+}
+
+.profile-sticky-card h1 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--text-main);
+    margin-bottom: 6px;
+}
+
+.profile-role-tag {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent-blue);
+    background-color: var(--accent-blue-light);
+    padding: 4px 14px;
+    border-radius: var(--radius-pill);
+    display: inline-block;
+    margin-bottom: 28px;
+}
+
+.profile-info-list {
+    text-align: left;
+    border-top: 1px solid rgba(0,0,0,0.04);
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--text-main);
+}
+
+.info-row svg {
+    color: var(--text-muted);
+    flex-shrink: 0;
+}
+
+/* Основна секция с модули (Вдясно) */
+.about-main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* Секция с микро-статистики (SaaS стил) */
+.about-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.stat-mini-box {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: var(--shadow-premium);
+    text-align: center;
+}
+
+.stat-mini-box .stat-num {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: -1px;
+    line-height: 1;
+    margin-bottom: 6px;
+}
+
+.stat-mini-box .stat-lbl {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* Модулни карти за съдържание */
+.about-modular-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-card);
+    padding: 40px;
+    box-shadow: var(--shadow-premium);
+}
+
+.card-title-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.card-title-area h2 {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+    color: var(--text-main);
+}
+
+.card-title-icon {
+    color: var(--accent-blue);
+    display: flex;
+    align-items: center;
+}
+
+.about-modular-card p {
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: #475569;
+    margin-bottom: 16px;
+}
+
+.about-modular-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* Секция Умения (Skill Tags) */
+.skills-group-wrapper {
+    margin-top: 24px;
+}
+
+.skills-group-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    margin-top: 20px;
+}
+
+.skills-tags-flex {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.skill-tag-pill {
+    background-color: #f1f5f9;
+    color: #334155;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+/* Минималистичен Хронологичен Таймлайн */
+.timeline-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: relative;
+    padding-left: 24px;
+    margin-top: 10px;
+}
+
+.timeline-wrapper::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background-color: #e2e8f0;
+}
+
+.timeline-node {
+    position: relative;
+}
+
+.timeline-node::before {
+    content: '';
+    position: absolute;
+    left: -24px;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 2px solid var(--accent-blue);
+    z-index: 2;
+}
+
+.timeline-year {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent-blue);
+    margin-bottom: 2px;
+}
+
+.timeline-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 4px;
+}
+
+.timeline-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* Адаптивност */
+@media (max-width: 968px) {
+    .about-grid-container {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    .profile-sticky-card {
+        position: static;
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .about-modular-card {
+        padding: 24px;
+    }
+}
+/* ==========================================================================
+   ИНТЕГРАЦИЯ НА ПОДОБРЕНИЯТА: МОДЕРНА ТЪРСАЧКА И ИНТЕРАКТИВНИ СЕНКИ
+   ========================================================================== */
+
+/* Контейнер за търсачката */
+.search-wrapper-box {
+    position: relative;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* Входно поле за търсене с луксозен дизайн */
+.search-input-field {
+    width: 100%;
+    padding: 14px 16px 14px 46px;
+    font-size: 14.5px;
+    background-color: #f1f5f9;
+    border: 1px solid transparent;
+    border-radius: var(--radius-btn);
+    color: var(--text-main);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: inherit;
+}
+
+/* Ефект при фокус на търсачката */
+.search-input-field:focus {
+    outline: none;
+    background-color: #ffffff;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 4px var(--accent-blue-light);
+}
+
+/* Позициониране на SVG иконката (лупа) */
+.search-icon-svg {
+    position: absolute;
+    left: 16px;
+    color: var(--text-muted);
+    pointer-events: none;
+    transition: color 0.25s ease;
+}
+
+.search-input-field:focus + .search-icon-svg {
+    color: var(--accent-blue);
+}
+
+/* Кръстосана микро-анимация при посочване на картите (Уроците) */
+.premium-card {
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease !important;
+}
+
+.premium-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 40px rgba(0, 0, 0, 0.05), 
+                0 12px 20px rgba(0, 0, 0, 0.02) !important;
+}
+
+/* Стил за бутоните-филтри при посочване */
+.filter-pill-btn {
+    transition: all 0.2s ease-in-out;
+}
+.filter-pill-btn:hover:not(.active) {
+    background-color: #e2e8f0;
+    color: var(--text-main);
+}
+
+/* ==========================================================================
+   МОБИЛНА АДАПТИВНОСТ (MOBILE NAVIGATION DOCK)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .main-nav {
+        position: fixed;
+        top: auto;
+        bottom: 16px;
+        left: 16px;
+        right: 16px;
+        width: calc(100% - 32px);
+        max-width: 450px;
+        margin: 0 auto;
+        border-radius: 20px;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        padding: 8px 12px;
+        z-index: 9999;
+    }
+
+    .main-nav .logo-area { display: none; }
+    .main-nav .nav-links { display: flex; justify-content: space-around; width: 100%; gap: 0 !important; margin-left: 0 !important; }
+    .main-nav .nav-links a { font-size: 14px !important; padding: 10px 0; flex: 1; text-align: center; border-radius: 12px; }
+    .main-nav .nav-links a.active::after { display: none; }
+    .main-nav .nav-links a.active { background-color: var(--accent-blue-light); color: var(--accent-blue) !important; font-weight: 600; }
+    
+    body { padding-bottom: 100px !important; }
+    .hero-wrapper { flex-direction: column !important; text-align: center; gap: 28px; }
+    .hero-actions { justify-content: center; }
+    .hero-image-wrapper { width: 100% !important; }
+    .content-layout-grid { display: flex !important; flex-direction: column !important; gap: 20px; }
+}
+/* Луксозно оцветяване на активните бутони според изискването */
+.filter-pill-btn[data-value="КМИТ"].active {
+    background-color: #16a34a !important; /* Наситено зелено */
+    color: #ffffff !important;
+}
+
+.filter-pill-btn[data-value="Информатика"].active {
+    background-color: #a855f7 !important; /* Красиво SaaS лилаво */
+    color: #ffffff !important;
+}
+
+.btn-resource-title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Разстояние между иконката и текста */
+}
+
+/* Стил за вашите собствени иконки от папка resources */
+.btn-custom-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    flex-shrink: 0; /* Предпазва иконката от свиване при дълъг текст */
+}
+
+.main-nav .nav-links a, .filter-pill-btn, .mini-badge, .btn-resource-single {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+    }
+
+    /* НОВО: Прави картите в каталога независими и предотвратява бялото пространство */
+    #lessons-grid {
+        align-items: start !important;
+    }

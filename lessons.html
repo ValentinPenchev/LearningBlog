@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Уроци | Образователен Профил</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Премиум подравняване на иконките спрямо текста */
+        .main-nav .nav-links a, .filter-pill-btn, .mini-badge, .btn-resource-single {
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 6px !important;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo-area">
+                <div class="logo-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                        <path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z"></path>
+                    </svg>
+                </div>
+                <span>Образователен Профил</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    <span>Начало</span>
+                </a>
+                <a href="lessons.html" class="active">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z"/></svg>
+                    <span>Уроци</span>
+                </a>
+                <a href="about.html">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    <span>За мен</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container" style="margin-top: 40px; padding-bottom: 80px;">
+        
+        <div class="section-header-row" style="margin-bottom: 24px;">
+            <h2 class="section-title">Каталог на уроците</h2>
+        </div>
+
+        <section class="filters-container-box">
+            
+            <div class="search-wrapper-box" style="position: relative; margin-bottom: 24px; display: flex; align-items: center;">
+                <input type="text" id="lesson-search-input" class="search-input-field" placeholder="Търсене на урок по заглавие..." style="width: 100%; padding: 12px 16px 12px 42px; border-radius: var(--radius-btn); border: 1px solid var(--border-color); background: #f1f5f9;">
+                <svg class="search-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="position: absolute; left: 16px; color: var(--text-muted);">
+                    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </div>
+
+            <div class="filter-group-wrapper">
+                <span class="filter-title-label">Направление</span>
+                <div class="filter-pills-row">
+                    <button class="filter-pill-btn active" data-filter="subject" data-value="all">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+                        <span>Всички</span>
+                    </button>
+                    <button class="filter-pill-btn" data-filter="subject" data-value="КМИТ">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="12" x="3" y="4" rx="2" ry="2"/><line x1="2" x2="22" y1="20" y2="20"/><line x1="12" x2="12" y1="16" y2="20"/></svg>
+                        <span>КМИТ</span>
+                    </button>
+                    <button class="filter-pill-btn" data-filter="subject" data-value="Информатика">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="14" x2="10" y1="4" y2="20"/></svg>
+                        <span>Информатика</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="filter-group-wrapper">
+                <span class="filter-title-label">Класове</span>
+                <div class="filter-pills-row">
+                    <button class="filter-pill-btn active" data-filter="grade" data-value="all">Всички</button>
+                    
+                    <button class="filter-pill-btn" data-filter="grade" data-value="5"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>5 клас</button>
+                    <button class="filter-pill-btn" data-filter="grade" data-value="6"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>6 клас</button>
+                    <button class="filter-pill-btn" data-filter="grade" data-value="7"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>7 клас</button>
+                    <button class="filter-pill-btn" data-filter="grade" data-value="8"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>8 клас</button>
+                    <button class="filter-pill-btn" data-filter="grade" data-value="9"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>9 клас</button>
+                    <button class="filter-pill-btn" data-filter="grade" data-value="10"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>10 клас</button>
+                    <button class="filter-pill-btn" data-filter="grade" data-value="11"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>11 клас</button>
+                    <button class="filter-pill-btn" data-filter="grade" data-value="12"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>12 клас</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-layout-grid full-width-catalog" id="lessons-grid">
+            </section>
+
+    </main>
+
+    <footer class="main-footer" style="background-color: #ffffff; border-top: 1px solid rgba(0, 0, 0, 0.04); padding: 32px 0; text-align: center;">
+        <div class="container">
+            <p style="color: var(--text-muted); font-size: 13.5px; margin: 0; letter-spacing: -0.01em;">
+                &copy; 2026 Образователен Профил. Всички права запазени.
+            </p>
+        </div>
+    </footer>
+
+    <script src="catalog.js"></script>
+    <script>
+        // Код за търсачката в реално време
+        document.getElementById('lesson-search-input').addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.premium-card');
+            cards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const desc = card.querySelector('.card-desc').textContent.toLowerCase();
+                if (title.includes(query) || desc.includes(query)) {
+                    card.style.display = "flex";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
+</html>

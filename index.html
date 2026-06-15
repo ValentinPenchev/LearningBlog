@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Начало | Образователен Профил</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --accent-blue: #2563eb;
+            --bg-light: #f8faff;
+        }
+
+        /* Общ фон само за най-горната част (Hero секцията) */
+        .hero-wrapper-bg {
+            background-color: var(--bg-light);
+            background-image: 
+                radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 10% 80%, rgba(37, 99, 235, 0.03) 0%, transparent 40%);
+            padding-bottom: 20px;
+        }
+
+        /* Hero секция разположение */
+        .hero-section {
+            padding: 50px 0 20px 0;
+        }
+        .hero-content h1 {
+            font-size: 54px;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: #0f172a;
+        }
+        .hero-content p {
+            font-size: 20px;
+            max-width: 500px;
+        }
+
+        /* Бутони в Hero */
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .btn-secondary-link {
+            text-decoration: none;
+            color: #475569;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.2s;
+        }
+        .btn-secondary-link:hover {
+            color: var(--accent-blue);
+        }
+
+        /* ОТДЕЛНА СЕКЦИЯ: Бял фон за 4-те функции */
+        .features-section-wrapper {
+            background-color: #ffffff;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 80px 0;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        .feature-item {
+            display: flex;
+            gap: 15px;
+        }
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: #eff6ff;
+            color: var(--accent-blue);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .feature-text h4 {
+            font-size: 16px;
+            margin-bottom: 4px;
+            color: #1e293b;
+        }
+        .feature-text p {
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 1024px) {
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 640px) {
+            .features-grid { grid-template-columns: 1fr; }
+            .hero-actions { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero-wrapper-bg">
+        <nav class="main-nav">
+            <div class="nav-container">
+                <a href="index.html" class="logo-area">
+                    <div class="logo-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z"></path></svg>
+                    </div>
+                    <span>Образователен Профил</span>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html" class="active">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    <span>Начало</span>
+                    </a>
+                    <a href="lessons.html">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z"/></svg>
+                    <span>Уроци</span>
+                    </a>
+                    <a href="about.html">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    <span>За мен</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <header class="hero-section container">
+            <div class="hero-wrapper">
+                <div class="hero-content">
+                    <span class="hero-badge" style="background: #eff6ff; color: #2563eb;">Личен образователен профил</span>
+                    <h1>Споделени ресурси за<br><span style="color: var(--accent-blue);">иновативно обучение</span></h1>
+                    <p>Добре дошли в моето дигитално пространство. Тук споделям практически опит, уроци и материали, създадени да вдъхновяват и улесняват учебния процес.</p>
+                    <div class="hero-actions">
+                        <a href="lessons.html" class="btn-primary">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+                            <span>Разгледай уроците</span>
+                        </a>
+                        <a href="lessons.html" class="btn-secondary-link">
+                            <span>Виж категориите</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800" alt="Workspace" class="hero-main-img">
+                    <div class="floating-stats-card">
+                        <div class="stats-icon-box">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                        </div>
+                        <div class="stats-text">
+                            <strong>Непрекъснато развитие</strong>
+                            <span>Ново съдържание всяка седмица</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <div class="features-section-wrapper">
+        <section class="container">
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+                    <div class="feature-text">
+                        <h4>Качествени уроци</h4>
+                        <p>Ясно обяснени и практически ориентирани материали.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+                    <div class="feature-text">
+                        <h4>Полезни материали</h4>
+                        <p>Допълнителни ресурси и файлове за свободно ползване.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                    <div class="feature-text">
+                        <h4>Учи със свое темпо</h4>
+                        <p>Достъп по всяко време, за да учиш удобно.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                    <div class="feature-text">
+                        <h4>Подкрепа</h4>
+                        <p>Споделяй идеи и задавай своите въпроси.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="main-footer" style="background-color: #ffffff; padding: 40px 0; text-align: center;">
+        <div class="container">
+            <p style="color: var(--text-muted); font-size: 13.5px; margin: 0;">
+                &copy; 2026 Образователен Профил. Всички права запазени.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

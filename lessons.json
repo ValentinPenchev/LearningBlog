@@ -1,0 +1,146 @@
+[
+    {
+        "title": "Преговор",
+        "subject": "КМИТ",
+        "grade": "5",
+        "image": "/backgrounds/cloud-computing-banner-background-smart-city.jpg",
+        "desc": "",
+        "type": "Презентация",
+        "duration": "40 мин",
+        "resources": [
+            { "name": "Разгледай презентацията", "url": "materials/5 grade/5 кл. Тема 1 - Преговор.pdf" }
+        ]
+    },
+    {
+        "title": "Компютърна система и информационни технологии",
+        "subject": "КМИТ",
+        "grade": "5",
+        "image": "/backgrounds/cloud-computing-banner-background-smart-city.jpg",
+        "desc": "",
+        "type": "Презентация",
+        "duration": "40 мин",
+        "resources": [
+            { "name": "Разгледай презентацията", "url": "materials/5 grade/5 кл. Тема 3 - Компютърна система и информационни технологии.pdf" }
+        ]
+    },
+    {
+        "title": "Носители на информация и устройства за достъп до носители на информация",
+        "subject": "КМИТ",
+        "grade": "5",
+        "image": "https://media.istockphoto.com/id/527495289/photo/woman-hand-plugging-a-pendrive-on-a-laptop-at-home.jpg?s=612x612&w=0&k=20&c=PdS85_0fRLKAAYWFPSe2A9c6JAFnmIn5ZGuqrLcK9zk=",
+        "desc": "",
+        "type": "Презентация",
+        "duration": "40 мин",
+        "resources": [
+            { "name": "Разгледай презентацията", "url": "materials/5 grade/5 кл. Тема 5 - Носители на информация и устройства за достъп до носители на информация.pdf" }
+        ]
+    },
+    {
+        "title": "Файлова структура на организация на данните",
+        "subject": "КМИТ",
+        "grade": "5",
+        "image": "/backgrounds/file-folder.jpg",
+        "desc": "",
+        "type": "Презентация",
+        "duration": "40 мин",
+        "resources": [
+            { "name": "Разгледай презентацията", "url": "materials/5 grade/5 кл. Тема 6 - Файлова структура на организация на данните.pdf" }
+        ]
+    },
+    {
+        "title": "Основни действия с файлове и папкиова структура на организация на данните",
+        "subject": "КМИT",
+        "grade": "5",
+        "image": "/backgrounds/cloud-computing-banner-background-smart-city.jpg",
+        "desc": "",
+        "type": "Презентация",
+        "duration": "40 мин",
+        "resources": [
+            { "name": "Разгледай презентацията", "url": "materials/5 grade/5 кл. Тема 7 - Основни действия с файлове и папки.pdf" }
+        ]
+    },
+    {
+        "title": "Интернет",
+        "subject": "КМИТ",
+        "grade": "5",
+        "image": "macloud-computing-banner-background-smart-city.jpg",
+        "desc": "",
+        "type": "Презентация",
+        "duration": "40 мин",
+        "resources": [
+            { "name": "Разгледай презентацията", "url": "materials/5 grade/5 кл. Тема 9 - Интернет.pdf" }
+        ]
+    },
+    {
+        "title": "Електронна поща",
+        "subject": "КМИТ",
+        "grade": "5",
+        "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&auto=format&fit=crop&q=60",
+        "desc": "",
+        "type": "Презентация",
+        "duration": "40 мин",
+        "resources": [
+            { "name": "Разгледай презентацията", "url": "materials/5 grade/5 кл. Тема 10 - Електронна поща.pdf" }
+        ]
+    },
+    {
+        "title": "Числата и техните представяния",
+        "subject": "Информатика",
+        "grade": "8",
+        "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&auto=format&fit=crop&q=60",
+        "desc": "",
+        "type": "Презентация и задачи",
+        "duration": "40 мин",
+        "resources": [
+            { "name": "Разгледай презентацията", "url": "materials/8 grade/8 кл - Тема 1- Числата и техните представяния.pdf" }
+        ]
+    },
+    {
+        "title": "Изпращане и получаване на електронно писмо. Прикачени файлове",
+        "subject": "КМИТ",
+        "grade": "5",
+        "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&auto=format&fit=crop&q=60",
+        "desc": "",
+        "type": "Презентация",
+        "duration": "40 мин",
+        "resources": [
+            { "name": "Разгледай презентацията", "url": "materials/5 grade/5 кл. Тема 11 - Изпращане и получаване на електронно писмо. Прикачени файлове.pdf" }
+        ]
+    },
+    {
+        "title": "Числата и техните представяния",
+        "subject": "Информатика",
+        "grade": "8",
+        "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&auto=format&fit=crop&q=60",
+        "desc": "",
+        "type": "Презентация и задачи",
+        "duration": "40 мин",
+        "resources": [
+            { "name": "Разгледай презентацията", "url": "materials/8 grade/8 кл - Тема 1- Числата и техните представяния.pdf" }
+        ]
+    },
+    {
+        "title": "Информационни дейности и процеси",
+        "subject": "Информатика",
+        "grade": "8",
+        "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&auto=format&fit=crop&q=60",
+        "desc": "",
+        "type": "Презентация и задачи",
+        "duration": "40 мин",
+        "resources": [
+            { "name": "Разгледай презентацията", "url": "materials/8 grade/8 кл. Тема 2 - Информационни дейности и процеси.pdf" }
+        ]
+    },
+    {
+        "title": "Анализ на данни и автоматизиране на изчисления в Excel",
+        "subject": "КМИТ",
+        "grade": "8",
+        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600",
+        "desc": "Работа с формули, използване на относителни и абсолютни адреси, сортиране и филтриране на таблици.",
+        "type": "Практическа задача",
+        "duration": "45 мин",
+        "resources": [
+            { "name": "Свали практическа задача (docx)", "url": "#" }
+        ]
+    }
+]
