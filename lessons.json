@@ -96,6 +96,18 @@
         ]
     },
     {
+        "title": "Операционни системи и носители на информация",
+        "subject": "КМИТ",
+        "grade": "6",
+        "image": "https://img.magnific.com/free-vector/technical-support-guys-working-repairing-computer-hardware-software-troubleshooting-fixing-problems-problem-checking-concept_335657-1838.jpg?t=st=1781602468~exp=1781606068~hmac=b210dc98d9e1891bc19016afc171a981aa927ea0600366c1886f0e52d8c7ebdc&w=1480",
+        "desc": "",
+        "type": "Презентация",
+        "duration": "40 мин",
+        "resources": [
+            { "name": "Разгледай презентацията", "url": "materials/6 grade/6 кл. Тема 3 - Операционни системи и носители на информация.pdf" }
+        ]
+    },
+    {
         "title": "Числата и техните представяния",
         "subject": "Информатика",
         "grade": "8",
